@@ -10,31 +10,33 @@
 #include <stdarg.h>
 
 /**
- * Main - struct stack_s is a doubly linked stack representation
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
  *
- * Description: structure of doubly linked list
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
- * Main - struct instruction_s is the opcode and its function
- * @opcode: the opcode for the project
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
  * @f: function to handle the opcode
  *
- * Description: opcode explanation and its function
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *head;
