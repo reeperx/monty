@@ -18,6 +18,7 @@ void add_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
 	tmp = head;
 	head = *new_node;
 	head->next = tmp;
+	head->prev = NULL;
 	tmp->prev = head;
 }
 
