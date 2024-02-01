@@ -26,6 +26,23 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+} bus_t;
+extern bus_t bus;
+
+/**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -80,5 +97,8 @@ void err(int error_code, ...);
 void more_err(int error_code, ...);
 void string_err(int error_code, ...);
 void rotr(stack_t **, unsigned int);
+
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
 
 #endif
