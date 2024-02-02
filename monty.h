@@ -58,6 +58,7 @@ typedef struct instruction_s
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
+int is_integer(const char *str);
 
 /*Code for file operations*/
 void open_file(char *file_name);
@@ -72,6 +73,8 @@ void free_nodes(void);
 void print_stack(stack_t **, unsigned int);
 void add_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
+void push(stack_t **stack, __attribute__((unused))unsigned int line_number);
+void pall(stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 void call_fun(op_func, char *, char *, int, int);
 
