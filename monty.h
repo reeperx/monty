@@ -73,7 +73,7 @@ void free_nodes(void);
 void print_stack(stack_t **, unsigned int);
 void add_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
-void push(stack_t **stack, __attribute__((unused))unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 void call_fun(op_func, char *, char *, int, int);
